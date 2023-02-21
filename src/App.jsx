@@ -6,6 +6,8 @@ import Products from "./pages/Products";
 import Info from "./pages/Info";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
+import SearchForm from "./components/SearchForm";
+import Search from "./pages/Search";
 
 const App = () => {
   return (
@@ -13,12 +15,14 @@ const App = () => {
       <h1>React Router</h1>
       <BrowserRouter>
         <Navbar />
+        <SearchForm />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/products/:id" element={<Products />} />
           <Route path="/products/:id/info" element={<Info />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/search" element={<Search />} />
+          {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
